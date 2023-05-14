@@ -448,7 +448,6 @@ body { background: var(--white);}
 
 .footer { background: var(--rich-black-fogra-29); }
 
-<<<<<<< HEAD
 .footer-top { padding-block: var(--section-padding); }
 
 .footer-brand { margin-bottom: 50px; }
@@ -535,14 +534,184 @@ body { background: var(--white);}
   
   .copyright a:is(:hover, :focus) { color: var(--cultured); }
   
-=======
+
+/*-----------------------------------*\
+ * #MEDIA QUERIES
+\*-----------------------------------*/
+
+/**
+ * responsive for larger than 550px screen
+ */
+
+ @media (min-width: 550px) {
+
+  /**
+   * CUSTOM PROPERTY
+   */
+
+  :root {
+
+    /**
+     * typography
+     */
+
+    --fs-1: 45px;
+
+  }
+
+
+
+  /**
+   * REUSED STYLE
+   */
+
+  .container {
+    max-width: 550px;
+    margin-inline: auto;
+  }
+
+  .h2 { --fs-1: 35px; }
+
+
+
+  /**
+   * HEADER
+   */
+
+  .header .logo { min-width: 160px; }
+
+
+
+  /**
+   * DEPARTMENTS
+   */
+
+  .departments-card { padding: 30px; }
+
+
+
+  /**
+   * INSTRUCTOR, FOOTER
+   */
+
+  .instructor-list,
+  .footer-link-box { grid-template-columns: 1fr 1fr; }
+
+}
+
+
+
+
+
+/**
+ * responsive for larger than 768px screen
+ */
+
+@media (min-width: 768px) {
+
+  /**
+   * CUSTOM PROPERTY
+   */
+
+  :root {
+
+    /**
+     * typography
+     */
+
+    --fs-1: 55px;
+
+  }
+
+
+
+  /**
+   * REUSED STYLE
+   */
+
+  .container { max-width: 750px; }
+
+
+
+  /**
+   * HERO, ABOUT
+   */
+
+  .hero-banner,
+  .about-banner {
+    max-width: 600px;
+    margin-inline: auto;
+  }
+
+  .about-content { max-width: 600px; }
+
+
+
+  /**
+   * DEPARTMENTS
+   */
+
+  .departments-title {
+    max-width: 600px;
+    margin-inline: auto;
+  }
+
+  .departments-list { grid-template-columns: 1fr 1fr; }
+
+
+
+  /**
+   * INSTRUCTOR
+   */
+
+  .instructor-title { max-width: 600px; }
+
+
+
+  /**
+   * CTA
+   */
+
+  .cta {
+    position: relative;
+    z-index: 1;
+  }
+
+  .cta .title-wrapper { max-width: 60%; }
+
+  .cta-banner {
+    display: block;
+    background: url("../images/cta-banner.png") no-repeat;
+    background-size: contain;
+    background-position: center;
+    width: 350px;
+    height: 350px;
+    position: absolute;
+    bottom: -26px;
+    left: 51%;
+  }
+
+
+
+  /**
+   * FOOTER
+   */
+
+  .footer-text { max-width: 400px; }
+
+}
+
+
+
+
 
 /**
  * responsive for larger than 1024px screen
  */
 
- @media (min-width: 1024px) {
-    /**
+@media (min-width: 1024px) {
+
+  /**
    * CUSTOM PROPERTY
    */
 
@@ -571,7 +740,11 @@ body { background: var(--white);}
     position: absolute;
   }
 
-  /***HEADER****/
+
+
+  /**
+   * HEADER
+   */
 
   .header .logo { margin-right: 25px; }
 
@@ -605,7 +778,7 @@ body { background: var(--white);}
 
   .navbar-link::after {
     --scale: 0;
-
+    
     content: "";
     position: absolute;
     bottom: 15px;
@@ -619,16 +792,17 @@ body { background: var(--white);}
     transition: var(--transition);
   }
 
-
   .navbar-link:is(:hover, :focus)::after { --scale: 1; }
 
   .overlay { display: none; }
 
-  }
 
-   /*****HERO****/
 
-   .hero .container {
+  /**
+   * HERO
+   */
+
+  .hero .container {
     display: grid;
     grid-template-columns: 4fr 6fr;
     align-items: center;
@@ -640,7 +814,11 @@ body { background: var(--white);}
     order: 1;
   }
 
-  /*****ABOUT****/
+
+
+  /**
+   * ABOUT
+   */
 
   .about .container {
     display: grid;
@@ -654,33 +832,37 @@ body { background: var(--white);}
     margin-bottom: 0;
   }
 
-  .about-banner .vector-line{
+  .about-banner .vector-line {
     width: 400px;
     bottom: 50px;
     left: -50px;
   }
 
-  .play-btn{
+  .play-btn {
     width: 100px;
     height: 100px;
   }
 
-  .about-content { max-width: unset;}
+  .about-content { max-width: unset; }
 
-  /*****ABOUT****/
 
-  .departments{
+
+  /**
+   * DEPARTMETNS
+   */
+
+  .departments {
     position: relative;
     z-index: 1;
   }
 
-.departments .vector-line{
+  .departments .vector-line {
     top: 100px;
     right: 0;
     z-index: -1;
-}
+  }
 
-.departments-title { max-width: 500px; }
+  .departments-title { max-width: 500px; }
 
   .departments-list { grid-template-columns: repeat(3, 1fr); }
 
@@ -694,5 +876,121 @@ body { background: var(--white);}
 
 
 
- 
->>>>>>> d1cab6fded7ab8e21eec028d6b19698263317dbf
+  /**
+   * INSTRUCTOR
+   */
+
+  .instructor {
+    position: relative;
+    z-index: 1;
+  }
+
+  .instructor .vector-line:first-child {
+    top: 50px;
+    left: 0;
+    z-index: -1;
+  }
+
+  .instructor .title-wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .instructor-title {
+    max-width: 500px;
+    margin-bottom: 0;
+  }
+
+  .instructor-list { grid-template-columns: repeat(3, 1fr); }
+
+  .instructor .vector-line:last-child {
+    bottom: -100px;
+    left: 0;
+    z-index: -1;
+  }
+
+
+
+  /**
+   * CTA
+   */
+
+  .cta .title-wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+  }
+
+  .cta-title {
+    position: relative;
+    margin-bottom: 0;
+    width: calc(100% - 200px);
+  }
+
+  .cta-title .vector-line {
+    right: -20px;
+    bottom: 0;
+  }
+
+  .cta-banner {
+    left: 60%;
+    width: 320px;
+    bottom: -39px;
+  }
+
+
+
+  /**
+   * FOOTER
+   */
+
+  .footer-link-box { grid-template-columns: repeat(4, 1fr); }
+
+}
+
+
+
+
+
+/**
+ * responsive for larger than 1200px screen
+ */
+
+@media (min-width: 1200px) {
+
+  /**
+   * REUSED STYLE
+   */
+
+  .container { max-width: 1150px; }
+
+
+
+  /**
+   * DEPARTMENTS
+   */
+
+  .departments-title { max-width: 550px; }
+
+
+
+
+  /**
+   * INSTRUCTOR
+   */
+
+  .instructor { padding-bottom: 150px; }
+
+
+
+  /**
+   * CTA 
+   */
+
+  .cta .title-wrapper { max-width: 64%; }
+
+  .cta-banner { left: 68%; }
+
+}
